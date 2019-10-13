@@ -1,6 +1,6 @@
 #[allow(unused_imports)]
-extern crate wrapping_uint;
-use wrapping_uint::wrappit;
+extern crate wrapping_arithmetic;
+use wrapping_arithmetic::wrappit;
 
 #[test]
 fn test_mul() {
