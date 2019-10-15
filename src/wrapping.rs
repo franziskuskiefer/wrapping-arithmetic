@@ -34,6 +34,11 @@ impl Args {
                     #left.wrapping_add(#right)
                 );
             }
+            BinOp::Sub(_op) => {
+                return parse_quote!(
+                    #left.wrapping_sub(#right)
+                );
+            }
             BinOp::Mul(_op) => {
                 return parse_quote!(
                     #left.wrapping_mul(#right)
@@ -62,6 +67,11 @@ impl Args {
             BinOp::AddEq(_op) => {
                 return parse_quote!(
                     #left = #left.wrapping_add(#right)
+                );
+            }
+            BinOp::SubEq(_op) => {
+                return parse_quote!(
+                    #left = #left.wrapping_sub(#right)
                 );
             }
             BinOp::MulEq(_op) => {

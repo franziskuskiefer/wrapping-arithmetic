@@ -24,6 +24,16 @@ fn test_add() {
 }
 
 #[test]
+fn test_sub() {
+    #[wrappit]
+    fn sub() -> u32 {
+        let a: u32 = 0;
+        a - 1
+    }
+    assert_eq!(std::u32::MAX, sub());
+}
+
+#[test]
 fn test_mul_assign() {
     #[wrappit]
     fn mul() -> u32 {
@@ -43,6 +53,17 @@ fn test_add_assign() {
         a
     }
     assert_eq!(1u32, add());
+}
+
+#[test]
+fn test_sub_assign() {
+    #[wrappit]
+    fn sub() -> u32 {
+        let mut a: u32 = 0;
+        a -= 1;
+        a
+    }
+    assert_eq!(std::u32::MAX, sub());
 }
 
 #[test]
