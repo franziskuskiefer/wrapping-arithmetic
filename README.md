@@ -16,7 +16,7 @@ is rewritten to
 fn mix(a: u32, b: u32, c: [u32; 8]) -> u32 {
     let mut r = a.wrapping_add(b);
     for u in c {
-        r = c.wrapping_mul(u);
+        r = r.wrapping_mul(u);
     }
     r
 }
