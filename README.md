@@ -3,7 +3,7 @@ This crate provides a proc macro that rewrites arithemtic operators `+,-,*` into
 The following function for example
 ````Rust
 #[wrappit]
-fn mix(a: u32, b: u32, c: [u32; 8]) -> u32 {
+fn mix(a: u32, b: u32, c: &[u32]) -> u32 {
     let mut r = a + b;
     for u in c {
         r *= u;
@@ -13,7 +13,7 @@ fn mix(a: u32, b: u32, c: [u32; 8]) -> u32 {
 ````
 is rewritten to
 ````Rust
-fn mix(a: u32, b: u32, c: [u32; 8]) -> u32 {
+fn mix(a: u32, b: u32, c: &[u32]) -> u32 {
     let mut r = a.wrapping_add(b);
     for u in c {
         r = r.wrapping_mul(u);
